@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function runGame(){
 
+    // Generate two random numbers between 1 and 25
+    // Math.floor rounds the number down to a whole number
+    // Math.random generates random numbers between 0 and 1
+
+    let num1 = Math.floor(Math.random() * 25) + 1;
+    let num2 = Math.floor(Math.random() * 25) + 1;
+
 }
 
 // Called when the user clicks the Submit button or presses Enter
