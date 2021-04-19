@@ -54,6 +54,13 @@ function calculateCorrectAnswer(){
     let operand2 = parseInt(document.getElementById('operand2').innerHTML);
     let operator = document.getElementById('operator').innerHTML;
 
+    if (operator === '+'){
+        return [operand1 + operand2, 'addition'];
+    } else{
+        alert(`Unimplemented operator ${operator}`);  // note use of back ticks for template literal
+        throw `Unimplemented operator ${operator}, aborting!`;  // throws an error to the console window
+    }
+
 }
 
 function incrementScore(){
