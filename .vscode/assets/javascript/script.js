@@ -1,7 +1,7 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add Event Listeners to them
 
-document.addEventListener('DOMContentLoad', function(){
+document.addEventListener('DOMContentLoaded', function(){
     let buttons = document.getElementsByTagName('button');
 
     for (let button of buttons){
@@ -16,9 +16,14 @@ document.addEventListener('DOMContentLoad', function(){
     }
 })
 
+// The main game "loop", called when the script is first loaded
+// and after the user's answer has been processed
+
 function runGame(){
 
 }
+
+// Called when the user clicks the Submit button or presses Enter
 
 function checkAnswer(){
 
@@ -36,6 +41,8 @@ function incrementWrongAnswer(){
 
 }
 
+// Displays the questions.
+
 function displayAdditionQuestion(){
 
 }
@@ -47,6 +54,3 @@ function displaySubractQuestion(){
 function displayMultiplyQuestion(){
 
 }
-
-let emptyBox = document.getElementById('emptyBox');
-emptyBox.innerHTML = '<h2>I was empty but now I am a H2 Heading!</h2>';
