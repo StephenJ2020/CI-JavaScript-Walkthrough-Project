@@ -47,6 +47,13 @@ function checkAnswer(){
 
 function calculateCorrectAnswer(){
 
+    // Gets the operands (Numbers) and the operator (plus, minus, etc)
+    // directly from the DOM
+
+    let operand1 = parseInt(document.getElementById('operand1').innerHTML);
+    let operand2 = parseInt(document.getElementById('operand2').innerHTML);
+    let operator = document.getElementById('operator').innerHTML;
+
 }
 
 function incrementScore(){
