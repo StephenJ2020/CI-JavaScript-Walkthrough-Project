@@ -47,3 +47,6 @@ function displaySubractQuestion(){
 function displayMultiplyQuestion(){
 
 }
+
+let emptyBox = document.getElementById('emptyBox');
+emptyBox.innerHTML = '<h2>I was empty but now I am a H2 Heading!</h2>';
