@@ -45,6 +45,8 @@ function runGame(gameType){
         displayMultiplyQuestion(num1, num2);
     } else if (gameType === 'subtract'){
         displaySubractQuestion(num1, num2);
+    } else if (gameType === 'division'){
+        displayDivisionQuestion(num1, num2);
     } else {
         alert(`Unknown Game Type ${gameType}`);  // Note use of back ticks for template literal
         throw `Unknown Game Type ${gameType}, aborting!`;
@@ -90,6 +92,9 @@ function calculateCorrectAnswer(){
         return[operand1 * operand2, 'multiply'];
     } else if (operator === '-'){
         return[operand1 - operand2, 'subtract'];
+    } else if (operator === '/'){
+        let roundedNumber = Math.round(operand1 / operand2);
+        return[roundedNumber, 'division'];
     } else {
         alert(`Unimplemented operator ${operator}`);  // note use of back ticks for template literal
         throw `Unimplemented operator ${operator}, aborting!`;  // throws an error to the console window
@@ -137,4 +142,10 @@ function displayMultiplyQuestion(operand1, operand2){
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = 'x';
 
+}
+
+function displayDivisionQuestion(operand1, operand2){
+    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;  // ternary operator to place the larger number first
+    document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
+    document.getElementById('operator').textContent = '/';
 }
