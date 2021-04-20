@@ -34,7 +34,9 @@ function runGame(gameType){
         displayAdditionQuestion(num1, num2);
     } else if (gameType === 'multiply'){
         displayMultiplyQuestion(num1, num2);
-    } else{
+    } else if (gameType === 'subtract'){
+        displaySubractQuestion(num1, num2);
+    } else {
         alert(`Unknown Game Type ${gameType}`);  // Note use of back ticks for template literal
         throw `Unknown Game Type ${gameType}, aborting!`;
     }
@@ -77,7 +79,9 @@ function calculateCorrectAnswer(){
         return [operand1 + operand2, 'addition'];
     } else if (operator === 'x'){
         return[operand1 * operand2, 'multiply'];
-    } else{
+    } else if (operator === '-'){
+        return[operand1 - operand2, 'subtract'];
+    } else {
         alert(`Unimplemented operator ${operator}`);  // note use of back ticks for template literal
         throw `Unimplemented operator ${operator}, aborting!`;  // throws an error to the console window
     }
@@ -112,8 +116,10 @@ function displayAdditionQuestion(operand1, operand2){
 
 }
 
-function displaySubractQuestion(){
-
+function displaySubractQuestion(operand1, operand2){
+    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;  // ternary operator - similar to if statement but shorter
+    document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
+    document.getElementById('operator').textContent = '-';
 }
 
 function displayMultiplyQuestion(operand1, operand2){
