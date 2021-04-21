@@ -93,8 +93,7 @@ function calculateCorrectAnswer(){
     } else if (operator === '-'){
         return[operand1 - operand2, 'subtract'];
     } else if (operator === '/'){
-        let roundedNumber = Math.round(operand1 / operand2);
-        return[roundedNumber, 'division'];
+        return[operand1 / operand2, 'division'];
     } else {
         alert(`Unimplemented operator ${operator}`);  // note use of back ticks for template literal
         throw `Unimplemented operator ${operator}, aborting!`;  // throws an error to the console window
@@ -145,7 +144,9 @@ function displayMultiplyQuestion(operand1, operand2){
 }
 
 function displayDivisionQuestion(operand1, operand2){
+    operand1 = operand1 * operand2;
     document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;  // ternary operator to place the larger number first
     document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = '/';
+    //operand1 % operand 2 == 0
 }
